@@ -1,3 +1,4 @@
-192.168.1.149
-192.168.1.150
-192.168.1.151
+192.168.1.149 ansible_user=usuario
+192.168.1.150 ansible_user=usuario
+192.168.1.151 ansible_user=usuario
+
