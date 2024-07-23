@@ -4,6 +4,6 @@
   become: true
   tasks:
 
-  - name: install nginx package
+  - name: install apache2 package
     apt:
-      name: nginx
+      name: apache2
