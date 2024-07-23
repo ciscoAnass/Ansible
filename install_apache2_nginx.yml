@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+    - name: Update Repository
+      apt:
+        update_cache: yes
+
+    - name: Install apache2 package (Latest Version)
+      apt:
+        name: apache2
+        state: latest
+
+    - name: Install nginx Package
+      apt:
+        name: nginx
+        state: latest
