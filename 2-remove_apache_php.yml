@@ -3,16 +3,14 @@
   become: true
   tasks:
 
-    - name: Update Repository
-      apt:
-        update_cache: yes
-
     - name: Remove Apache2 Package
       apt:
         name: apache2
         state: absent
+      when: ansible_distribution in ["Ubuntu", "Debian"]
 
     - name: Remove NGINX
       apt:
         name: nginx
         state: absent
+      when: ansible_distribution in ["Ubuntu", "Debian"]

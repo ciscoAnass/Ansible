@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+    - name: Update Repository
+      dnf:
+        update_cache: yes
+      when: ansible_distribution in ["Rocky"]
+
+    - name: Install httpd package (Latest Version)
+      dnf:
+        name: httpd
+        state: latest
+      when: ansible_distribution in ["Rocky"]
+
+    - name: Install php Package
+      dnf:
+        name: php
+        state: latest
+      when: ansible_distribution in ["Rocky"]
+

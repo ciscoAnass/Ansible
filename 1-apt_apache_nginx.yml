@@ -6,13 +6,17 @@
     - name: Update Repository
       apt:
         update_cache: yes
+      when: ansible_distribution in ["Ubuntu", "Debian"]
 
     - name: Install apache2 package (Latest Version)
       apt:
         name: apache2
         state: latest
+      when: ansible_distribution in ["Ubuntu", "Debian"]
 
     - name: Install nginx Package
       apt:
         name: nginx
         state: latest
+      when: ansible_distribution in ["Ubuntu", "Debian"]
+

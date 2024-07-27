@@ -1,0 +1,24 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+    - name: Update Repository
+      apt:
+        update_cache: true
+
+    - name: Install WHOIS Package
+      apt:
+        name: whois
+        state: latest
+
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: latest
+
+    - name: Install VIM Package
+      apt:
+        name: vim
+        state: latest

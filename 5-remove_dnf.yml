@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+    - name: Update Repository
+      dnf:
+        update_cache: yes
+      when: ansible_distribution in ["Rocky"]
+
+    - name: Remove httpd package (Latest Version)
+      dnf:
+        name: httpd
+        state: absent
+      when: ansible_distribution in ["Rocky"]
