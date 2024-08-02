@@ -1,0 +1,14 @@
+
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Install Packets On all Distro
+    package: # Package on Ansible do Mean all packages managements types : DNF , APT , ...
+        name:
+          - "{{ apache }}" # We Just did put a Variable on inventory file and all the packages gonna be variables
+          - "{{ htop }}"   # We gonna change the variable content in every different distro for example in APT packages we do install apache2 , but in DNF packages we gonna need to change the content to httpd
+          - "{{ whois }}"  # Go take a look into inventory file
+        state: latest
+        update_cache: yes

@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Install Packets On Debian
+    apt:
+      name:
+        - apache2
+        - nginx
+        - whois
+        - gparted
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Debian"
+
+  - name: Delete Packages
+    apt:
+      name:
+        - apache2
+        - nginx
+      state: absent
+    when: ansible_distribution == "Debian"
+
+
+
+
+
