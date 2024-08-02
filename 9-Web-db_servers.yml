@@ -1,0 +1,38 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: Update Repository
+    apt:
+      update_cache: yes
+    when: ansible_distribution == "Debian"
+
+- hosts: web_Servers
+  become: true
+  tasks:
+
+  - name: Download Web Servers (Nginx and Apache)
+    apt:
+      name:
+        - apache2
+        - nginx
+
+- hosts: db_Servers
+  become: true
+  tasks:
+
+  - name: Download SQLmap
+    apt:
+      name: git
+      state: latest
+
+- hosts: File_Servers
+  become: true
+  tasks:
+
+  - name: Install Samba
+    package:
+        name:
+          - samba
+        state: latest

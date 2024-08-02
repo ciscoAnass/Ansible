@@ -1,0 +1,15 @@
+---
+- hosts: web_Servers
+  become: true
+  tasks:
+
+  - name: install Web Server Apache
+    package:
+        name:
+          - "{{ apache }}"
+          - nginx
+        state: latest
+        update_cache: yes
+
+
+# A Playbok for a Specefic Group We did call it Web_Servers , than contain 2 Debian servers
