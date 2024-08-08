@@ -4,15 +4,16 @@
   pre_tasks:
 
   - name: Update Repository
+    tags: Always
     apt:
       update_cache: yes
-    when: ansible_distribution == "Debian"
 
 - hosts: web_Servers
   become: true
   tasks:
 
   - name: Download Web Servers (Nginx and Apache)
+    tags: nginx,apache,apache2,debian
     apt:
       name:
         - apache2
@@ -23,6 +24,7 @@
   tasks:
 
   - name: Download SQLmap
+    tags: mysql,sql
     apt:
       name: git
       state: latest
@@ -32,6 +34,7 @@
   tasks:
 
   - name: Install Samba
+    tags: samba
     package:
         name:
           - samba

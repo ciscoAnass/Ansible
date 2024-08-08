@@ -1,0 +1,33 @@
+---
+- hosts: web_Servers
+  become: true
+  tasks:
+
+  - name: Install Web Server
+    tags: apache,apach2,webserver
+    apt:
+      name:
+        - apache2
+      state: latest
+
+- hosts: File_Servers
+  become: true
+  tasks:
+
+  - name: Install Samba
+    tags: samba,filetransfer
+    apt:
+      name:
+        - samba
+      state: latest
+
+- hosts: File_Servers
+  become: true
+  tasks:
+
+  - name: Install Samba
+    tags: samba,filetransfer
+    apt:
+      name:
+        - samba
+      state: latest

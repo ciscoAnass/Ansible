@@ -2,9 +2,6 @@
 192.168.1.149 ansible_user=root apache=apache2 htop=htop whois=whois
 192.168.1.150 ansible_user=root apache=apache2 htop=htop whois=whois
 # Create A Groups - where we gonna put our target group in playbook "hosts:" to do a specefic playbook
-[db_Servers]
-192.168.1.151 ansible_user=root apache=apache2 htop=htop whois=whois
-
 [File_Servers]
-192.168.1.152 ansible_user=root apache=httpd htop=htop whois=whois
+192.168.1.151 ansible_user=root apache=apache2 htop=htop whois=whois
 
