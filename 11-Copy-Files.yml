@@ -23,20 +23,16 @@
   become: true
   tasks:
 
-  - name: Install Samba
-    tags: samba,filetransfer
-    apt:
-      name:
-        - samba
-      state: latest
+  - name: Install Unzip
+    tags: zip,unzip
+    apt: 
+      name: unzip
 
-- hosts: File_Servers
-  become: true
-  tasks:
-
-  - name: Install Samba
-    tags: samba,filetransfer
-    apt:
-      name:
-        - samba
-      state: latest
+  - name: Install Terraform
+    unarchive:
+        src: https://releases.hashicorp.com/terraform/1.9.4/terraform_1.9.4_linux_amd64.zip
+        dest: /usr/local/bin
+        remote_src: yes # we are just telling linux that you dont have to look for the src because its link
+        mode: 0755
+        owner: root
+        group: root

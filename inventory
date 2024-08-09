@@ -4,4 +4,3 @@
 # Create A Groups - where we gonna put our target group in playbook "hosts:" to do a specefic playbook
 [File_Servers]
 192.168.1.151 ansible_user=root apache=apache2 htop=htop whois=whois
-
