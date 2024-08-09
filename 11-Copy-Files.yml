@@ -1,0 +1,42 @@
+---
+- hosts: web_Servers
+  become: true
+  tasks:
+
+  - name: Install Web Server
+    tags: apache,apach2,webserver
+    apt:
+      name:
+        - apache2
+      state: latest
+
+  - name: Copy Default html file for site
+    tags: html,apache2,apache
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
+
+- hosts: File_Servers
+  become: true
+  tasks:
+
+  - name: Install Samba
+    tags: samba,filetransfer
+    apt:
+      name:
+        - samba
+      state: latest
+
+- hosts: File_Servers
+  become: true
+  tasks:
+
+  - name: Install Samba
+    tags: samba,filetransfer
+    apt:
+      name:
+        - samba
+      state: latest
