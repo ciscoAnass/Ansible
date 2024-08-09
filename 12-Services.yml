@@ -1,0 +1,44 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Install Apache2
+    tags: apache2,apache,http
+    apt:
+      name:
+        - apache2
+      state: latest
+
+#######################################################
+  - name: Start and Enable the Apache2 Service  
+    tags: apache,service
+    service:
+      name: apache2
+      state: started
+    when: ansible_distribution == "Debian"
+#######################################################
+  - name: Stop and Disable the Apache2 Service  
+    tags: apache,service
+    service:
+      name: apache2
+      state: stopped
+      enabled: no
+    when: ansible_distribution == "Debian"
+#######################################################
+  - name: Change E-mail for the Apache2 File
+    tags: Change,mail,email
+    lineinfile:
+      path: /var/www/html/index.html
+      regexp: '^<head>' # the start of the line we wanna change
+      line: "<head><title>Hello World!!!</title></head>" # replacement
+    when: ansible_default_ipv4.address in ["192.168.1.149", "192.168.1.150"]
+    register: title
+#######################################################
+  - name : Restart the Apache2 Service 
+    tags: restart
+    service:
+      name: apache2
+      state: restarted
+      enabled: yes
+    when: title.changed # we do confirm that we gonna restart the service when the changeof title is done , if is not so no , and we do that using the register
