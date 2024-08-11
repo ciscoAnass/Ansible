@@ -1,0 +1,5 @@
+- name: Install apache2
+  tags: apache2
+  apt:
+    name: apache2
+    state: latest

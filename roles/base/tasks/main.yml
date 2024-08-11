@@ -1,0 +1,4 @@
+- name: add ssh key fro Poppy0
+  authorized_key:
+    user: Poppy0
+    key:  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOiWSrTcffmEjh3AlVhKGnv3fePokcpyEqR5cbiJlhQK ansible"

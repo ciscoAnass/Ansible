@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+  roles: 
+    - base
+- hosts: web_Servers
+  become: true
+  roles: 
+    - web_Servers
+
+- hosts: File_Servers
+  become: true
+  roles: 
+    - File_Servers
+
+
+
+# W did Create new folders names  "base" , "Web_Servers", "File_servers" , those folders
+# Inside Those folders we did create New Folder named "Tasks"
+# Inside the folder Tasks we did create a file call main.yml
+# This File do hvae the configuration of Tasks
+# For example in /base/tasks/main.yml we do have ssh configuration
+# For example in /web_servers/tasks/main.yml we did put configuration to install apache2
+# For example in /file_Server/tasks/main.yml we did put configuration to install Samba
