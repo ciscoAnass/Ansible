@@ -1,0 +1,40 @@
+---
+- hosts: all
+  become: true
+  tasks:
+#######################################################
+# CREATE GROUP Poppy0
+  - name: Create Group Call Poppy0
+    tags: Group
+    group:
+      name: Poppy0
+
+# CREATE User Poppy0 and put him on his Group
+  - name: Create Poppy User
+    tags: User
+    user:
+      name: Poppy0
+      groups: Poppy0
+#######################################################
+# CREATE User admin and put him on Root Group
+
+  - name: Create admin User
+    tags: User
+    user:
+      name: admin
+      groups: root
+#######################################################
+  - name : add ssh key for the user Poppy0
+    tags: ssh
+    authorized_key:
+      user: Poppy0
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOiWSrTcffmEjh3AlVhKGnv3fePokcpyEqR5cbiJlhQK ansible"
+#######################################################
+  - name: Giving some permissions to the User Poppy0
+    tags: sudo,sudoers,root,Poppy0
+    copy:
+      src: sudoer_Poppy0
+      dest: /etc/sudoers.d/Poppy0
+      owner: root
+      group: root
+      mode: 0440
