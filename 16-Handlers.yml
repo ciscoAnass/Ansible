@@ -10,3 +10,7 @@
       regexp: '^<head>' # the start of the line we wanna change
       line: "<head><title>Hello World!!!</title></head>" # replacement
     notify: change_apache
+# Go Check roles/web_Servers/handlers/main.yml
+# in main.yml you gonna find that when this file do what he need to do 
+# in this case change the title of apache2 HTML file , then the main.yml file get notified and he start working
+# automaticly after this file stop running and he do a restart of the Apache2 Service
