@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Install PHP-APACHE2-LIB
+    tags: php,apache2
+    apt:
+      name: 
+        - "{{ php }}"
+      state: latest
+# We do have the php variable on /host_vars
