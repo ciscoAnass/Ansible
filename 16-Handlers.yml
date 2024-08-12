@@ -1,0 +1,12 @@
+---
+- hosts: web_Servers
+  become: true
+  tasks:
+
+  - name: Change E-mail for the Apache2 File
+    tags: Change,mail,email
+    lineinfile:
+      path: /var/www/html/index.html
+      regexp: '^<head>' # the start of the line we wanna change
+      line: "<head><title>Hello World!!!</title></head>" # replacement
+    notify: change_apache
