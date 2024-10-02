@@ -16,7 +16,7 @@ Ansible se utiliza principalmente para:
 - Orquestación de tareas
 - Automatización de procesos de TI
 - Gestión de cumplimiento y seguridad
-
+***
 ## Guías rápidas
 
 1. [Instalar Apache y Nginx](./1-apt_apache_nginx.yml)
@@ -39,14 +39,13 @@ Ansible se utiliza principalmente para:
 18. [Directorio de archivos](./files)
 
 
-
-## Licencia
+# Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT. Consulte el archivo [LICENSE](LICENSE) para más detalles.
 
-## Autor
+# Autor
 
-1. [Anass Assim](https://github.com/ciscoAnass)
+### [Anass Assim](https://github.com/ciscoAnass)
 
 ---
 
