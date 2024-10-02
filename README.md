@@ -4,7 +4,7 @@
 
 Ansible es una poderosa herramienta de automatización de TI que simplifica la gestión de configuraciones, el despliegue de aplicaciones y la orquestación de tareas. Con su enfoque sin agentes y su lenguaje declarativo basado en YAML, Ansible permite a los equipos de TI automatizar procesos complejos de manera eficiente y escalable.
 
-![Ansible Logo](https://www.strsistemas.com/sites/default/files/imagen_ansible.jpg)
+<img src="https://wallpapercave.com/wp/wp11273127.jpg" alt="logo" width="1000px" ></img>
 
 ## ¿Para qué se utiliza Ansible?
 
