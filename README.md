@@ -46,7 +46,7 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulte el archivo [LICENS
 
 ## Autor
 
-Anass Assim
+1. [Anass Assim](https://github.com/ciscoAnass)
 
 ---
 
