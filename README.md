@@ -37,16 +37,3 @@ Ansible se utiliza principalmente para:
 16. [Uso de handlers](./16-Handlers.yml)
 17. [Directorio de roles](./roles)
 18. [Directorio de archivos](./files)
-
-
-# Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT. Consulte el archivo [LICENSE](LICENSE) para más detalles.
-
-# Autor
-
-### [Anass Assim](https://github.com/ciscoAnass)
-
----
-
-¿Necesitas más información sobre Ansible? Visita la [documentación oficial de Ansible](https://docs.ansible.com/).
